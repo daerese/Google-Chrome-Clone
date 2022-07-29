@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrome Clone</title>
+
+    <link rel="stylesheet" href="styles/style.css">
+
+    <!-- Font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;700&display=swap" rel="stylesheet">
+    <!-- fontawesome icons -->
+    <script src="https://kit.fontawesome.com/a4e8b7b3a4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="background-image-container">
+        <img src="images/background-images/battle-arena.png" class="background-image" alt="">
+    </div>
+
+    <div class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <p>Customize page</p>
+            </div>
+
+            <div class="modal-content-container">
+                <div class="modal-sidenav">
+                    <ul class="modal-sidenav-links">
+                        <li class="modal-sidenav-li"><a href="#" class="modal-sidenav-link current">Background</a></li>
+                        <li class="modal-sidenav-li"><a href="#" class="modal-sidenav-link">Shortcuts</a></li>
+                        <li class="modal-sidenav-li"><a href="#" class="modal-sidenav-link">Color and theme</a></li>
+                    </ul>
+                </div>
+                <div class="modal-main">
+                    <!-- Lets start by adding clickable images inside this container -->
+                    <div class="modal-image-container modal-image-container-1">
+                        <div class="modal-image-wrapper">
+                            <img src="images/background-images/grassfield.jpg" class="modal-image" alt="Grass Field">
+                        </div>
+                        <div class="modal-image-text">
+                            <p class="image-title">Some title</p>
+                        </div>
+                    </div>
+                    <div class="modal-image-container ">
+                        <img src="images/background-images/magical-island.png" class="modal-image" alt="">
+                        <p class="image-title">Some title</p>
+                    </div>
+                    <div class="modal-image-container">
+                        <img src="images/background-images/mountains-sunset.png" class="modal-image" alt="">
+                        <p class="image-title">Some title</p>
+                    </div>
+                    <div class="modal-image-container">
+                        <img src="images/background-images/satue-sunset.jpg" class="modal-image" alt="">
+                        <p class="image-title">Some title</p>
+                    </div>
+                    <div class="modal-image-container">
+                        <img src="images/background-images/space.png" class="modal-image" alt="">
+                        <p class="image-title">Some title</p>
+                    </div>
+                    <div class="modal-image-container">
+                        <img src="images/background-images/tree.jpg" class="modal-image" alt="">
+                        <p class="image-title">Some title</p>
+                    </div>
+                    <div class="modal-image-container">
+                        <img src="images/background-images/pink-sunset.png" class="modal-image" alt="">
+                        <p class="image-title">Some title</p>
+                    </div>
+                    <div class="modal-image-container">
+                        <img src="images/background-images/night-time.png" class="modal-image" alt="">
+                        <p class="image-title">Some title</p>
+                    </div>
+                    <div class="modal-image-container">
+                        <img src="images/background-images/battle-arena.png" class="modal-image" alt="">
+                        <p class="image-title">Some title</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-modal" id="gallery-btn"><i class="far fa-star"></i> Gallery Mode <span id="gallery-mode"></span></button>
+                <button class="btn btn-inverse btn-modal" id="cancel-btn">Cancel</button>
+                <button class="btn btn-modal" id="done-btn">Done</button>
+            </div>
+        </div>
+    </div>
+    <header>
+        <nav>
+            <ul class="nav-links">
+
+                <li class="nav-li"><a href="#" class="nav-link">Gmail</a></li>
+                <li class="nav-li"><a href="https://www.google.com/imghp?hl=en&tab=ri&authuser=0&ogbl" 
+                    class="nav-link">Images</a></li>
+                <li class="nav-li">
+                    <div class="grid-icon-wrapper">
+                        <a href="#" class="nav-link grid-icon"><i class="fas fa-th"></i></a>
+                    </div>
+                </li>
+                <li class="nav-li"><button class= "btn btn-sign-in">Sign in</button></li> <!-- I'll add the profile pic later -->
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <img class="page-logo" src="images/Google_logo.svg" alt="Google Logo">
+
+        <div class="searchbar-container">
+            <i class="fas fa-search icon icon-search"></i>
+            <input type="text" id="searchbar"
+            placeholder="Search Google or type a URL">
+            <a href="#" title="Search By Voice"><i class="fas fa-microphone icon mic-icon"></i></a>
+        </div>
+
+        <div class="shortcuts-container">
+            <div class="shortcut-wrapper">
+                <div class="shortcut-icon"></div>
+                <p class="shortcut-name">Place</p>
+            </div>
+            <div class="shortcut-wrapper">
+                <div class="shortcut-icon"></div>
+                <p class="shortcut-name">Place</p>
+            </div>
+            <div class="shortcut-wrapper">
+                <div class="shortcut-icon"></div>
+                <p class="shortcut-name">Place</p>
+            </div>
+            <div class="shortcut-wrapper">
+                <div class="shortcut-icon"></div>
+                <p class="shortcut-name">Place</p>
+            </div>
+            <div class="shortcut-wrapper">
+                <div class="shortcut-icon"></div>
+                <p class="shortcut-name">Place</p>
+            </div>
+            <div class="shortcut-wrapper">
+                <div class="shortcut-icon"></div>
+                <p class="shortcut-name">Place</p>
+            </div>
+            <div class="shortcut-wrapper">
+                <div class="shortcut-icon"></div>
+                <p class="shortcut-name">Place</p>
+            </div>
+            <div class="shortcut-wrapper">
+                <div class="shortcut-icon"></div>
+                <p class="shortcut-name">Place</p>
+            </div>
+        </div>
+
+    </div> <!-- /container -->
+
+    <div class="edit-icon-container" id="edit-icon-container">
+        <i class="fas fa-pen fa-stack-1x" id="edit-icon"></i>
+    </div>
+
+    <script src="customize-chrome.js"></script>
+</body>
+</html>
