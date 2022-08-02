@@ -11,6 +11,7 @@
  * 
  */
 
+
 /* *************************************************************
 SLIDESHOW CLASS:
 This class is used to create A background with changing images.
@@ -65,10 +66,13 @@ class Slideshow {
         this.slideCount = 0
 
         // Reset the status of the slideshow
-        this.slideShowActive = false
+        // this.slideShowActive = false
         
         // Reset the slide time interval
-        if (!this.slideInterval) {
+        if (this.slideShowActive) {
+            this.toggleSlideShow()
+        }
+        else { //If slideShowActive is already inactive (false)
             clearInterval(this.slideInterval)
         }
 
@@ -148,7 +152,7 @@ class Slideshow {
           }, 5000)
         }
       
-        else {
+        else { // If the slideshow is active, clear the interval. 
       
           this.slideShowActive = false;
       
@@ -200,7 +204,6 @@ cancelBtn.addEventListener('click', function () {
 })
 
 doneBtn.addEventListener('click', function changeBg() {
-    //console.log(modalImages[0].getAttribute('src'));
 
     for (let i = 0; i < modalImages.length; i++) {
         if (modalImages[i].classList.contains('selected-image')) {
@@ -240,7 +243,7 @@ function changeBG(image) {
         document.getElementById('gallery-mode').innerText = ''
     } 
 
-    // Set the BG tothe image selected by the user
+    // Set the BG to the image selected by the user
     mainBGImage.setAttribute('src', image)
 
     // Make the bgimage visible, make/keep the other invisible
@@ -252,44 +255,29 @@ function changeBG(image) {
 
 function toggleGalleryMode() {
 
+    if (mainBGImage.classList.contains('visible')) {
+        mainBGImage.classList.remove('visible')
+    }
+
     // Create a condition for whether gallery mode is off/on
-    if (!bgSlideshow.slideShowActive) {
+    if (!bgSlideshow.slideShowActive) { // if slideShowActive is inactive (false)
         bgSlideshow.toggleSlideShow();
 
         document.getElementById('gallery-mode').innerText = ': ON';
     }
-    else {
+    else { //if slideShowActive is true
         bgSlideshow.reset();
 
         document.getElementById('gallery-mode').innerText = '';
     }
 
+    modalOverlay.style.display = 'none';
+
+    console.log(bgSlideshow.slideShowActive)
+
 }
 
 
-
-/****************************
- * Background Image Slideshow
- ****************************/
-// let slideIndex = 0;
-// let galleryMode = false;
-// let bgSlideShow;
-// galleryBtn.addEventListener('click', function toggleSlideShow() {
-//     if (galleryMode == false) {
-//         galleryMode = true;
-//         document.getElementById("gallery-mode").innerHTML = ":ON";
-//     }
-//     else {
-//         clearInterval(bgSlideShow)
-//         galleryMode = false;
-//         document.getElementById("gallery-mode").innerHTML = ":OFF";
-//         return;
-//     }
-//     bgSlideShow = setInterval(function () {
-//         console.log(modalImages[slideIndex])
-//         slideIndex++;
-//         if (slideIndex > modalImages.length -1) slideIndex = 0;
-
-//         changeBG(modalImages[slideIndex]);
-//     }, 5000);
-// })
+/******************************
+ * MODAL NAVIGATION MENU
+ ******************************/
