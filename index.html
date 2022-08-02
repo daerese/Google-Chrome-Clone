@@ -18,7 +18,8 @@
 <body>
 
     <div class="background-image-container">
-        <img src="images/background-images/battle-arena.png" class="background-image" alt="">
+        <img src="" class="background-image" alt="">
+        <img src="" class="background-image main-image" alt="">
     </div>
 
     <div class="modal-overlay">
@@ -81,7 +82,9 @@
             </div>
 
             <div class="modal-footer">
-                <button class="btn btn-modal" id="gallery-btn"><i class="far fa-star"></i> Gallery Mode <span id="gallery-mode"></span></button>
+                <button class="btn btn-modal" id="gallery-btn" onclick="toggleGalleryMode()">
+                    <i class="far fa-star"></i> Gallery Mode<span id="gallery-mode"></span>
+                </button>
                 <button class="btn btn-inverse btn-modal" id="cancel-btn">Cancel</button>
                 <button class="btn btn-modal" id="done-btn">Done</button>
             </div>

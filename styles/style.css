@@ -4,6 +4,8 @@
     --btn-accent-hover: #32aaf5;
     --btn-accent-hover-light: #eff8fd;
     --border-light: rgba(109, 109, 109, 0.315);
+
+    --test-color: rgba(0, 0, 0, 0.39);
     /* Test Commit Comment */
 }
 
@@ -17,11 +19,11 @@ body {
     font-family: 'Noto Sans Jp', sans-serif;
     font-size: .9rem;
 
-    background-repeat:no-repeat;
-    background-size: cover;
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
     /* background-position:center; */
-    height: 100%;
-    width: 100%; 
+    /* height: 100%; */
+    /* width: 100%;  */
     /* transition-duration: 250ms; */
     /* opacity: 0; */
     /* background-image: url("images/background-images/mountains-sunset.png"); */
@@ -35,24 +37,37 @@ body {
     width: 100%;
     height: 100%;
     z-index: 0;
-    /* opacity: 0; */
+
+    overflow: hidden;
+
 }
 
 .background-image {
+    position: absolute;
     width: 100%; 
     height: 100%;
     object-fit: cover;
-    overflow: hidden;
+    /* overflow: hidden; */
+    opacity: 0;
+
+    margin-bottom: 0;
+
+    transition-duration: 1.5s;
+    transition-timing-function: ease;
 }
 
 img {
     max-width: 100%;
-    display: block;
+    /* display: block; */
 }
 
 /* =================
 Utilities
 ================= */
+
+.visible {
+    opacity: 1;
+}
 
 /* =================
 Typography
