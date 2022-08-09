@@ -5,6 +5,12 @@
     --btn-accent-hover-light: #eff8fd;
     --border-light: rgba(109, 109, 109, 0.315);
 
+
+    --modal-sidenav-hover: #d6d6d6;
+    --modal-sidenav-focus: #bdbdbd;
+    --modal-sidenav-li: #dae7f8;
+    --modal-sidenav-text: #508bdd; 
+
     --test-color: rgba(0, 0, 0, 0.39);
     /* Test Commit Comment */
 }
@@ -16,7 +22,8 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Noto Sans Jp', sans-serif;
+    /* font-family: 'Noto Sans Jp', sans-serif; */
+    font-family: 'Roboto', sans-serif;
     font-size: .9rem;
 
     /* background-repeat: no-repeat; */
@@ -67,6 +74,14 @@ Utilities
 
 .visible {
     opacity: 1;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.caption {
+    opacity: .75;
 }
 
 /* =================
@@ -263,6 +278,9 @@ header {
 MODAL
 ================= */
 
+/* Utilites */
+
+/* Modal overlay and container */
 .modal-overlay {
     display: none;
     width: 100%;
@@ -275,12 +293,8 @@ MODAL
 }
 
 .modal-container {
-    /* width: 60%; */
-    /* height: 80%; */
-    width: 780px;
+    width: 800px;
     height: 500px;
-    /* max-width: 700px; */
-    /* max-height: 500px; */
     background: white;
     position: absolute;
     top: 50%;
@@ -289,41 +303,39 @@ MODAL
     border-radius: 12px;
 }
 
+/* Modal header */
 .modal-header {
     border-bottom: 1px solid var(--border-light);
     width: 100%;
-    text-align: center;
-    padding: .75em;
+    /* text-align: right; */
+    padding: .75em 0;
 }
 
-/* Modal background images */
+.modal-header-content {
+    width: 70%;
+    /* border: 1px solid lightgreen; */
+    margin-left: auto;
+    
+}
 
+/* Main content (Sidenav and main page) */
 .modal-content-container {
     display: flex;
 }
 
-.modal-main {
-    /* background: lightblue; */
+.modal-main-container {
     width: 70%;
     height: 375px;
     /* overflow-y: auto allows for scrolling on this div 
     inside of the container.*/
     overflow-y: scroll;
-    /* overflow-x: auto; */
-    
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
-
-    padding-right: 10px;
 
     /* margin: 0; */
     /* padding: 0; */
 }
 
 .modal-main-grid {
-    /* THIS IS THE OLD VERSINO OF THE MODAL-MAIN CONTENT. 
+    /* THIS IS THE OLD VERSIon OF THE MODAL-MAIN CONTENT. 
     Use this code if you want the images to be back in a grid. */
 
     display: grid; 
@@ -332,12 +344,28 @@ MODAL
     gap: 15px 15px;
 }
 
-.modal-image-container {
-    /* border: 1px solid lightpink; */
-    /* width: 175px; */
-    width: 33%;
-    /* height: 175px; */
+/******************
+* Modal Pages
+*******************/
 
+.modal-page-container {
+    display: none;
+}
+
+.default {
+    display: block;
+}
+
+
+/* MODAL BACKGROUND PAGE */
+.modal-page-background {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.modal-image-container {
+    width: 33%;
     overflow: hidden;
 
     /* flex: 1 0 33%; */
@@ -345,8 +373,6 @@ MODAL
 
     padding-right: 10px;
     margin-bottom: 10px;
-
-    /* margin: 10px; */
 
     cursor: pointer;
 }
@@ -361,11 +387,6 @@ MODAL
     border-radius: 12px;
 }
 
-.modal-image-wrapper {
-    width: 100%;
-    height: 100%;
-}
-
 .modal-image:hover,
 .selected-image {
     opacity: .65;
@@ -377,7 +398,121 @@ MODAL
     opacity: .45;
 }
 
-/* modal footer and sidenav */
+/* MODAL SHORTCUTS PAGE */
+.modal-page-shortcuts {
+    /* border: 1px solid red; */
+
+    width: 100%;
+    height: 100%;
+
+    font-size: .8rem;
+
+}
+
+.modal-shortcuts-flex {
+    display: flex;
+}
+
+.modal-shortcut-container {
+    width: 48%;
+    margin-right: 15px;
+}
+
+.modal-shortcut-container:first {
+    /* width: 48%; */
+    /* border: 1px solid blue; */
+}
+
+.modal-shortcut {
+    width: 100%;
+    height: 150px;
+    border: 1px solid var(--border-light);
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+.modal-shortcut:hover {
+    /* background: #dae7f8; */
+    background: #f6faff;
+}
+
+.modal-shortcut:active {
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.247);
+}
+
+.modal-hide-shortcuts {
+
+    padding: 0px 20px;
+    display: flex;
+
+    align-items: center;
+
+    border: 1px solid var(--border-light);
+    border-radius: 5px;
+
+    flex-wrap: nowrap;
+     
+}
+
+.option-selected {
+    background: var(--modal-sidenav-li)
+}
+
+.btn-placeholder {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--border-light);
+    margin-left: auto;
+}
+
+.hide-shortcuts-icon {
+    margin-right: 35px;
+    color:rgba(0, 0, 0, 0.507);
+}
+
+
+/* MODAL COLORS AND THEMES PAGE */
+.modal-page-colors {
+    /* border: 1px solid red; */
+    /* padding: 0px 20px; */
+    height: 375px;
+
+    /* gap: 15px 15px; */
+    /* width: 50%; */
+}
+
+.colors-container {
+    
+    /* border: 3px solid green; */
+
+    width: 100%;
+    height: 100%;
+
+    /* padding: 0; */
+    
+    display: grid;
+
+    gap: 0px 0px;
+
+    justify-items: start;
+    align-items: center;
+
+    grid: repeat(4, 1fr) / repeat(6, 1fr);
+}
+
+.color {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: lightblue;
+}
+
+
+
+
+/* MODAL FOOTER */
 .modal-footer {
     position: fixed;
     bottom: 0;
@@ -387,28 +522,59 @@ MODAL
     background-color: white;
 
     border-top: 1px solid var(--border-light);
+
+    border-radius: 0px 0px 12px 12px
 }
 
 /* SIDENAV */
 .modal-sidenav {
     /* background: lightpink; */ 
+    
+    font-size: .87rem;
+
     width: 30%;
+}
+
+.modal-sidenav-list { /* ul container */
+    /* margin-left: 0; */
+    /* border: 2px solid lightcoral; */
+
+    padding: 0;
+
+    width: 82%;
+
+    margin-right: auto;
+    margin-left: 0;
 }
 
 .modal-sidenav-li {
     list-style-type: none;
-    background:rgba(211, 211, 211, 0.466);
+    cursor: pointer;
+
+    margin-bottom: 20px;
+    /* padding-left: 15px; */
+
+    padding: 8px 0px 8px 15px;
+
+    border-radius: 0px 20px 20px 0px;
 }
 
-.modal-sidenav-link {
-    color: black;
-    text-decoration: none;
-    background:rgba(211, 211, 211, 0.466);
+.modal-sidenav-li:not(.modal-current-li):hover {
+    background: var(--modal-sidenav-hover)
+}
+
+.modal-sidenav-li:not(.modal-current-li):active {
+    background: var(--modal-sidenav-focus)
+}
+
+.modal-current-li {
+    background: var(--modal-sidenav-li);
+    color: var(--modal-sidenav-text);
 }
 
 /* modal buttons */
-#done-btn {
-    margin-left: .5em;
+.btn-modal {
+    margin-left: .3em;
 }
 
 #gallery-btn {

@@ -281,3 +281,67 @@ function toggleGalleryMode() {
 /******************************
  * MODAL NAVIGATION MENU
  ******************************/
+const modalLiElements = document.querySelectorAll('.modal-sidenav-li')
+
+    // PROBLEM: These pages all have a different display property. 
+    // Solution 1: Use if statments to determine what page it is, then set the display.
+    // Solution 2: Put the page inside of a container.
+    //             Use display: block for the container, keep the page as the seperate display. 
+
+    /* Solution 2 tasks:
+        - Place the pages inside a common container** 
+        - Ensure that the background page is automatically displayed by default
+            - Also ensure that when the modal closes, it switches back to the default page.
+        - When user clicks on a new tab, hide all pages, display the correct page using the index values**
+    */
+
+$(document).ready(function() {
+
+    // loop through sidenav and page elements, add their index values as an attribute
+    for (let i = 0; i < $('.modal-page-container').length; i++) {
+
+        $('.modal-sidenav-li')[i].setAttribute('value', i)
+
+        $('.modal-page-container')[i].setAttribute('value', i)
+
+    }
+})
+
+modalLiElements.forEach(el => {
+    el.addEventListener('click', () => {
+        // toggle the class .modal-current-li if not already toggled
+        if (!el.classList.contains('modal-current-li')) {
+            
+            // find and clear the selected li element
+            modalLiElements.forEach(li => {
+
+                if (li.classList.contains('modal-current-li')) {
+                    li.classList.remove('modal-current-li')
+                }
+            })
+
+            // Call the function to display the new modal page
+
+            el.classList.add('modal-current-li')
+
+        }
+
+    })
+})
+
+
+// Add an event listener to switch the modal page when the user clicks a sidenav element. 
+$('.modal-sidenav-li').click(function(event) {
+
+    const selection = event.target.getAttribute('value')
+
+    $('.modal-page-container').hide()
+
+    $('.modal-page-container')[selection].style.display = 'block'
+
+    console.log($('.modal-page-container')[selection].style.display)
+
+})
+
+
+
