@@ -1,8 +1,7 @@
 <h2>This is a clone of the Google Chrome New Tab Page</h2>
 
 <h3>Description</h3>
-It's a very simple redesign of the new tab page without much functionality yet. I will be periodically adding more features and improving this site.
-This was made purely for the purposes of practice and testing myself. 
+This is a clone of the google new tab page. This was made purely for the purposes of practice. 
 
 <h3>Features</h3>
 <h4>Customize Chrome Modal</h4>
